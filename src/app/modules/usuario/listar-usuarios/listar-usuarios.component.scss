@@ -1,0 +1,332 @@
+// Seus estilos SCSS existentes foram mantidos aqui...
+.card {
+    --bs-card-border-radius: 8px;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.btn[ngbDropdownToggle]::after {
+    display: none;
+}
+
+/* Estilos para o paginador */
+.ngb-pagination {
+    display: flex;
+    justify-content: center;
+    /* Centraliza o paginador */
+    list-style-type: none;
+    /* Remove estilos de lista padrão */
+    padding-left: 0;
+    /* Remove o padding padrão */
+
+    .page-link {
+        color: #000000;
+        /* Cor do texto para os links */
+        background-color: #ffffff;
+        /* Cor de fundo para os links */
+        border-color: #dee2e600;
+        /* Cor da borda para os links */
+
+        &:hover {
+            color: #000000;
+            /* Cor do texto quando hover */
+            text-decoration: none;
+            /* Remove o sublinhado */
+            background-color: #e9ecef;
+            /* Cor de fundo quando hover */
+            border-color: #dee2e600;
+            /* Cor da borda quando hover */
+        }
+    }
+
+    .page-item.active .page-link {
+        color: #fff;
+        /* Cor do texto para o item ativo */
+        background-color: #007bff;
+        /* Cor de fundo para o item ativo */
+        border-color: #007bff;
+        /* Cor da borda para o item ativo */
+    }
+
+    /* Estilos para botões 'Anterior' e 'Próxima' */
+    .page-item:first-child .page-link {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+
+    .page-item:last-child .page-link {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+}
+
+.ajuste-paginator {
+    margin-left: 10rem;
+    margin-top: 10px;
+}
+
+/* Estilos específicos para o paginador */
+.ajuste-paginator .page-link {
+    color: #000000;
+    /* Bootstrap default blue */
+}
+
+.ajuste-paginator .page-item {
+    margin: 0;
+    /* Remove any potential extra margin */
+}
+
+/* Estilo para botões personalizados 'Anterior' e 'Próximo' */
+.ajuste-paginator button {
+    border: 1px solid #dee2e600;
+    /* Bootstrap default border color */
+    background-color: #fff;
+    padding: 0.5rem 0.75rem;
+    /* Padrão do Bootstrap padding para page-link */
+    margin-left: -1px;
+    /* Conserta a borda entre os botões */
+    line-height: 1.25;
+    /* Alinhamento da linha para igualar com page-link */
+}
+
+/* Estilo para manter o botão 'Anterior' arredondado à esquerda */
+.ajuste-paginator button:first-child {
+    border-top-left-radius: 0.25rem;
+    /* Raio da borda arredondado Bootstrap padrão */
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Estilo para manter o botão 'Próximo' arredondado à direita */
+.ajuste-paginator button:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+/* Estilo para o item de página ativo */
+.ajuste-paginator .page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #dee2e600;
+    line-height: 0.25 !important;
+}
+
+/* Estilo para o hover dos itens de página */
+.ajuste-paginator .page-item .page-link:hover {
+    color: #000000;
+    background-color: #e9ecef;
+    border-color: #dee2e600;
+    line-height: 0.25 !important;
+}
+
+.ajuste-paginator .page-link {
+    line-height: 0.25 !important;
+}
+
+.ajuste-paginator button {
+    line-height: 0.25 !important;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    /* Cor do texto para o avatar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.pink {
+    background-color: #E91E63;
+}
+
+/* Exemplo de cor pink */
+.green {
+    background-color: #4CAF50;
+}
+
+/* Exemplo de cor green */
+.blue {
+    background-color: #2196F3;
+}
+
+/* Exemplo de cor blue */
+.orange {
+    background-color: #FF9800;
+}
+
+/* Exemplo de cor orange */
+/* Adicione mais cores conforme necessário */
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-email {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.status-ativo {
+    color: #28a745;
+    /* verde */
+    background-color: #c3e6cb;
+    /* verde claro */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.status-pendente {
+    color: #ffc107;
+    /* amarelo */
+    background-color: #ffeeba;
+    /* amarelo claro */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.status-bloqueado {
+    color: #dc3545;
+    /* vermelho */
+    background-color: #f5c6cb;
+    /* vermelho claro */
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.input-group .form-control {
+    border-right: 0;
+    /* Remove a borda direita do input para parecer conectado com o botão */
+}
+
+.input-group .btn {
+    border-left: 0;
+    /* Remove a borda esquerda do botão para parecer conectado com o input */
+}
+
+/* Pode precisar de ajustes dependendo de outros estilos que você tem */
+.dropdown .dropdown-menu {
+    width: 100%;
+    /* Faz com que o menu dropdown tenha a largura do botão/input */
+    top: 100%;
+    /* Ajusta a posição do dropdown para baixo do botão/input */
+}
+
+/* Estilos para quando o dropdown estiver aberto */
+.show>.dropdown .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    white-space: nowrap;
+    width: 86% !important;
+    /* Mantém os itens do dropdown em uma única linha */
+}
+
+/* Pode ser necessário ajustar o z-index dependendo de outros elementos na sua página */
+.dropdown {
+    z-index: 1000;
+    /* Assegura que o dropdown fica acima dos outros elementos */
+}
+
+
+/* Adicionando novos estilos para a seção de pesquisa e filtro conforme solicitado */
+
+/* Reset de estilos de entrada e botão */
+.input-group .form-control,
+.input-group .btn {
+    border: 1px solid #ced4da;
+    /* Cor de borda comum */
+    border-radius: 8px;
+    /* Raio de borda arredondado */
+}
+
+/* Estilo de entrada de pesquisa */
+.input-group:first-child .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Botão de pesquisa */
+.input-group:first-child .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Botão de filtro e entrada de filtro */
+.input-group:not(:first-child) .form-control {
+    border-radius: 8px;
+}
+
+.input-group:not(:first-child) .btn {
+    border-radius: 8px;
+    border-left: 0;
+    /* Remove a borda esquerda entre o input e o botão */
+}
+
+/* Estilos para dropdown de filtro */
+.dropdown-menu {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+/* Ajustes de cores ao interagir com botão e entrada */
+.form-control:focus,
+.btn:focus {
+    border-color: #80bdff;
+    box-shadow: none;
+    /* Remova esta linha se quiser manter o shadow */
+}
+
+/* Cor do texto do botão e ícones */
+.btn,
+.fas {
+    color: #495057;
+    /* Cor de texto similar ao placeholder */
+}
+
+/*Cor de fundo branca para botões*/
+.btn-bg-white {
+    background-color: #fff
+}
+
+.input-group .form-control {
+    border-right: none; // Remove a borda direita do input
+}
+
+.input-group-text {
+    border-left: none; // Remove a borda esquerda do span que contém o ícone
+    background-color: #FFF; // Define a cor de fundo para combinar com o input
+}
+
+// Se necessário, remover a borda ao redor do ícone de pesquisa diretamente
+.input-group .fa-search {
+    border: none;
+}
+
+/* Ajuste paginação CSS/SCSS */
+.custom-pagination {
+    --bs-pagination-border-radius: 8px !important;
+}
+
+.margin {
+    margin: 0 20px 20px 20px;
+}
+
+.padding-10 {
+    padding: 10px 0 10px 0;
+}
+
+.padding-5 {
+    padding: 5px 0 5px 0;
+}

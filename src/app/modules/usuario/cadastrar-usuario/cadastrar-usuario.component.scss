@@ -1,0 +1,98 @@
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: none !important;
+}
+
+/* Adiciona um pouco de espaço abaixo do título */
+.modal-title {
+    margin-bottom: .5rem;
+}
+.modal-subtitle {
+    font-size: .875rem; /* Escolha o tamanho da fonte que você preferir */
+    color: #6c757d; /* Escolha a cor que você preferir */
+}
+
+
+.btn-close {
+    border: none;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d;
+    /* Cor da borda */
+    color: #6c757d;
+    /* Cor do texto */
+    background-color: transparent;
+}
+
+.btn-transparent-border {
+    border: 1px solid transparent;
+    /* Torna a borda transparente */
+    background-color: transparent;
+    color: #6c757d;
+    /* Adicione a cor do texto desejada aqui */
+    box-shadow: none;
+    /* Remove a sombra do botão */
+    margin-right: 0.5rem;
+    /* Adiciona um espaçamento entre os botões, ajuste conforme necessário */
+}
+
+.btn-primary {
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    /* Adiciona um espaçamento entre os botões, ajuste conforme necessário */
+}
+
+/* Sobrescreve o foco para todos os botões dentro do modal-footer */
+.modal-footer .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Sobrescreve o foco apenas para o botão específico de fechar */
+.btn-transparent-border:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.mg-b-1 {
+    margin-bottom: 1rem !important;
+}
+
+::ng-deep .iti {
+    width: 100% !important;
+}
+
+/*Cor de fundo branca para botões*/
+.btn-bg-white {
+    background-color: #fff
+}
+
+.input-group .form-control {
+    border-left: none; // Remove a borda direita do input
+}
+
+.input-group-text {
+    border-right: none; // Remove a borda esquerda do span que contém o ícone
+    background-color: #FFF; // Define a cor de fundo para combinar com o input
+}
+
+// Se necessário, remover a borda ao redor do ícone de pesquisa diretamente
+.input-group .fa-envelope {
+    border: none;
+}
+
+.margin{
+    margin: 0 20px 20px 20px;
+}

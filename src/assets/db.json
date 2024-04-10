@@ -1,0 +1,64 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nome": "João",
+            "sobreNome": "Silva",
+            "telefone": "99999-9999",
+            "email": "joao.silva@example.com",
+            "perfil": [
+                "Administrador"
+            ],
+            "idioma": "Português",
+            "contatoPreferencial": "E-mail",
+            "status": "Ativo",
+            "dataCriacao": "2022-01-01T09:00:00Z",
+            "ultimoAcesso": "2022-01-15T10:00:00Z"
+        },
+        {
+            "id": 2,
+            "nome": "Maria",
+            "sobreNome": "Costa",
+            "telefone": "88888-8888",
+            "email": "maria.costa@example.com",
+            "perfil": [
+                "Usuário"
+            ],
+            "idioma": "Português",
+            "contatoPreferencial": "Telefone",
+            "status": "Bloqueado",
+            "dataCriacao": "2022-02-10T11:00:00Z",
+            "ultimoAcesso": "2022-03-05T14:00:00Z"
+        },
+        {
+            "id": 3,
+            "nome": "Carlos",
+            "sobreNome": "Mendes",
+            "telefone": "77777-7777",
+            "email": "carlos.mendes@example.com",
+            "perfil": [
+                "Gerente"
+            ],
+            "idioma": "Inglês",
+            "contatoPreferencial": "Telefone",
+            "status": "Pendente",
+            "dataCriacao": "2022-03-20T15:00:00Z",
+            "ultimoAcesso": "2022-04-01T16:00:00Z"
+        },
+        {
+            "id": 4,
+            "nome": "Ana",
+            "sobreNome": "Pereira",
+            "telefone": "66666-6666",
+            "email": "ana.pereira@example.com",
+            "perfil": [
+                "Usuário"
+            ],
+            "idioma": "Espanhol",
+            "contatoPreferencial": "E-mail",
+            "status": "Ativo",
+            "dataCriacao": "2022-05-15T17:00:00Z",
+            "ultimoAcesso": "2022-05-18T18:00:00Z"
+        }
+    ]
+}

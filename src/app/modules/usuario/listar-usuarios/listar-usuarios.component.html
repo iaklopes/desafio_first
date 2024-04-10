@@ -1,0 +1,131 @@
+<div class="container mt-5">
+    <div class="row">
+        <h3>Usuários</h3>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div class="col-4">
+            <form [formGroup]="searchForm">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Pesquise pelo nome ou e-mail"
+                        formControlName="searchQuery" aria-label="Search">
+                    <span class="input-group-text btn-bg-white" id="basic-addon2">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="col-2">
+            <div class="dropdown">
+                <div class="input-group mb-3">
+                    <button class="btn btn-bg-white dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filtrar
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form>
+                            <div *ngFor="let status of statusOptions">
+                                <label class="dropdown-item">
+                                    <input type="checkbox" [checked]="selectedStatus.includes(status)"
+                                        (change)="toggleStatus(status)"> {{ status }}
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-auto ml-auto">
+            <div class="input-group mb-3">
+                <button class="btn btn-primary" (click)="openCadastrarUsuarioModal()">Novo usuário</button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Usuários</th>
+                        <th>Status</th>
+                        <th (click)="sort('dataCriacao')">Data de criação
+                            <i class="fa" [ngClass]="getSortIcon('dataCriacao')"></i>
+                        </th>
+                        <th (click)="sort('ultimoAcesso')">Último acesso
+                            <i class="fa" [ngClass]="getSortIcon('ultimoAcesso')"></i>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="user-avatar" [ngClass]="getAvatarClass(usuario.nome)">
+                                    {{ usuario.nome.charAt(0) }}{{ usuario.sobrenome.charAt(0) }}
+                                </div>
+                                <div class="user-info ms-2">
+                                    <div class="user-name">{{ usuario.nome }} {{ usuario.sobrenome }}</div>
+                                    <div class="user-email">{{ usuario.email }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center padding-5">
+                                <span
+                                    [ngClass]="{'status-ativo': usuario.status === 'Ativo', 'status-pendente': usuario.status === 'Pendente', 'status-bloqueado': usuario.status === 'Bloqueado'}">
+                                    {{ usuario.status }}
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center padding-10">
+                                {{ usuario.dataCriacao | date }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center padding-10">
+                                {{ usuario.ultimoAcesso | date }}
+                            </div>
+                        </td>
+
+                        <td class="text-end">
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn" id="dropdownBasic1" ngbDropdownToggle>
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <button ngbDropdownItem (click)="editarUsuario(usuario)">Editar</button>
+                                    <button ngbDropdownItem
+                                        (click)="usuario.id && excluirUsuario(usuario.id)">Excluir</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 d-flex justify-content-center">
+            <ngb-pagination class="ajuste-paginator custom-pagination" [collectionSize]="collectionSize"
+                [(page)]="currentPage" aria-label="Default pagination">
+                <ng-template ngbPaginationPrevious let-disabled>
+                    <button [disabled]="disabled" class="btn">Anterior</button>
+                </ng-template>
+                <ng-template ngbPaginationNext let-disabled>
+                    <button [disabled]="disabled" class="btn">Próximo</button>
+                </ng-template>
+            </ngb-pagination>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end">
+            <select class="form-control" [(ngModel)]="pageSize" (change)="onPageSizeChange()">
+                <option value="10">10 itens por página</option>
+                <option value="20">20 itens por página</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div *ngIf="showSuccessAlert" class="alert alert-success margin" role="alert">
+    {{mensagem}}
+</div>
